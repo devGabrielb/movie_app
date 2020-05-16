@@ -1,0 +1,4 @@
+lib/app/modules/search/Widgets/movie_details/movie_details_widget.dart
+test/app/modules/search/Widgets/movie_details/movie_details_widget_test.dart
+lib/app/modules/search/Widgets/movie_details/movie_details_controller.dart
+test/app/modules/search/Widgets/movie_details/movie_details_controller_test.dart

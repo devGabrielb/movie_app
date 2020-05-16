@@ -1,0 +1,4 @@
+lib/app/modules/search/Widgets/search/search_widget.dart
+test/app/modules/search/Widgets/search/search_widget_test.dart
+lib/app/modules/search/Widgets/search/search_controller.dart
+test/app/modules/search/Widgets/search/search_controller_test.dart
