@@ -1,6 +1,6 @@
 import 'package:mobx/mobx.dart';
+import 'package:movie_app/app/modules/search/models/movie_model.dart';
 import 'package:movie_app/app/modules/search/models/popular_movies_list_model.dart';
-import 'package:movie_app/app/modules/search/models/popular_movies_model.dart';
 import 'package:movie_app/app/modules/search/repository/search_repository.dart';
 
 part 'popular_movies_controller.g.dart';
@@ -18,8 +18,8 @@ abstract class _PopularMoviesControllerBase with Store {
   int pageMovies = 1;
 
   @observable
-  ObservableList<PopularMoviesModel> listMovies =
-      ObservableList<PopularMoviesModel>.of([]);
+  ObservableList<MovieModel> listMovies =
+      ObservableList<MovieModel>.of([]);
 
   @observable
   ObservableFuture<PopularMoviesListModel> listMoviesPagination;
@@ -52,7 +52,7 @@ abstract class _PopularMoviesControllerBase with Store {
   }
 
   @action
-  setAllMovie(List<PopularMoviesModel> movie){
+  setAllMovie(List<MovieModel> movie){
     listMovies.addAll(movie);
   }
 

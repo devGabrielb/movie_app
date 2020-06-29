@@ -21,7 +21,8 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         initialIndex: 1,
         length: 3,
         child: Scaffold(
-          backgroundColor: Color(0XFF1f1d32),
+          // backgroundColor: Color(0XFF1f1d32),
+          backgroundColor: Color(0xFFFFFAFB),
           body: TabBarView(children: [
             Container(
               height: MediaQuery.of(context).size.height,

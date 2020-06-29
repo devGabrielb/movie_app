@@ -55,14 +55,14 @@ mixin _$PopularMoviesController on _PopularMoviesControllerBase, Store {
       Atom(name: '_PopularMoviesControllerBase.listMovies');
 
   @override
-  ObservableList<PopularMoviesModel> get listMovies {
+  ObservableList<MovieModel> get listMovies {
     _$listMoviesAtom.context.enforceReadPolicy(_$listMoviesAtom);
     _$listMoviesAtom.reportObserved();
     return super.listMovies;
   }
 
   @override
-  set listMovies(ObservableList<PopularMoviesModel> value) {
+  set listMovies(ObservableList<MovieModel> value) {
     _$listMoviesAtom.context.conditionallyRunInAction(() {
       super.listMovies = value;
       _$listMoviesAtom.reportChanged();
@@ -126,7 +126,7 @@ mixin _$PopularMoviesController on _PopularMoviesControllerBase, Store {
       ActionController(name: '_PopularMoviesControllerBase');
 
   @override
-  dynamic setAllMovie(List<PopularMoviesModel> movie) {
+  dynamic setAllMovie(List<MovieModel> movie) {
     final _$actionInfo =
         _$_PopularMoviesControllerBaseActionController.startAction();
     try {

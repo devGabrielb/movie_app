@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+     
+    //     statusBarColor: Color(0xFFFFFAFB), // status bar color
+    //     statusBarIconBrightness: Brightness.dark,
+    //      // status bar icons' color
+        
+    // ));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       navigatorKey: Modular.navigatorKey,

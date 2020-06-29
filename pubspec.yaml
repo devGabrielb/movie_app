@@ -19,6 +19,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  sleek_circular_slider:
   cached_network_image:
   google_fonts: ^1.0.0
   dio: ^3.0.9

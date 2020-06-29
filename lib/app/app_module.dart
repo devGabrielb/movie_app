@@ -5,6 +5,7 @@ import 'package:movie_app/app/app_widget.dart';
 import 'package:movie_app/app/modules/home/home_module.dart';
 import 'package:movie_app/app/modules/login/login_module.dart';
 import 'package:movie_app/app/modules/search/Widgets/movie_details/movie_details_widget.dart';
+import 'modules/search/Widgets/movies/movies_grid_all_widget.dart';
 
 class AppModule extends MainModule {
   @override
@@ -16,7 +17,8 @@ class AppModule extends MainModule {
   List<Router> get routers => [
         Router(Modular.initialRoute, module: LoginModule()),
          Router('/home', module: HomeModule()),
-          Router('/movieDetails', child: (_, args) => MovieDetailsWidget(movie: args.data,))
+          Router('/movieDetails', child: (_, args) => MovieDetailsWidget(movie: args.data,)),
+          Router('/moviesGridAll', child: (_, args) => MoviesGridAll(title:args.data[0],movies: args.data[1],))
       ];
 
   @override

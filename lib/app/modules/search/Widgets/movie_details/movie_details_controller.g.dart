@@ -9,40 +9,33 @@ part of 'movie_details_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$MovieDetailsController on _MovieDetailsControllerBase, Store {
-  final _$valueAtom = Atom(name: '_MovieDetailsControllerBase.value');
+  final _$moviesAtom = Atom(name: '_MovieDetailsControllerBase.movies');
 
   @override
-  int get value {
-    _$valueAtom.context.enforceReadPolicy(_$valueAtom);
-    _$valueAtom.reportObserved();
-    return super.value;
+  ObservableFuture<MovieCreditsModel> get movies {
+    _$moviesAtom.context.enforceReadPolicy(_$moviesAtom);
+    _$moviesAtom.reportObserved();
+    return super.movies;
   }
 
   @override
-  set value(int value) {
-    _$valueAtom.context.conditionallyRunInAction(() {
-      super.value = value;
-      _$valueAtom.reportChanged();
-    }, _$valueAtom, name: '${_$valueAtom.name}_set');
+  set movies(ObservableFuture<MovieCreditsModel> value) {
+    _$moviesAtom.context.conditionallyRunInAction(() {
+      super.movies = value;
+      _$moviesAtom.reportChanged();
+    }, _$moviesAtom, name: '${_$moviesAtom.name}_set');
   }
 
-  final _$_MovieDetailsControllerBaseActionController =
-      ActionController(name: '_MovieDetailsControllerBase');
+  final _$getCreditsAsyncAction = AsyncAction('getCredits');
 
   @override
-  void increment() {
-    final _$actionInfo =
-        _$_MovieDetailsControllerBaseActionController.startAction();
-    try {
-      return super.increment();
-    } finally {
-      _$_MovieDetailsControllerBaseActionController.endAction(_$actionInfo);
-    }
+  Future getCredits(int id) {
+    return _$getCreditsAsyncAction.run(() => super.getCredits(id));
   }
 
   @override
   String toString() {
-    final string = 'value: ${value.toString()}';
+    final string = 'movies: ${movies.toString()}';
     return '{$string}';
   }
 }

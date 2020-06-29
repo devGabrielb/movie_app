@@ -1,17 +1,18 @@
-import 'package:movie_app/app/modules/search/models/popular_movies_model.dart';
+
+import 'movie_model.dart';
 
 class PopularMoviesListModel {
   int totalPages;
-  List<PopularMoviesModel> popularMoviesModel;
+  List<MovieModel> popularMoviesModel;
 
   PopularMoviesListModel({this.popularMoviesModel, this.totalPages});
 
   PopularMoviesListModel.fromJson(Map<String, dynamic> json) {
     totalPages = json['total_pages'];
     if (json['results'] != null) {
-      popularMoviesModel = new List<PopularMoviesModel>();
+      popularMoviesModel = new List<MovieModel>();
       json['results'].forEach((v) {
-        popularMoviesModel.add(new PopularMoviesModel.fromJson(v));
+        popularMoviesModel.add(new MovieModel.fromJson(v));
       });
     }
   }
